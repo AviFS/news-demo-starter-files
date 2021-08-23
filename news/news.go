@@ -2,7 +2,6 @@ package news
 
 import (
 	"net/http"
-	"new/http"
 )
 
 type Client struct {
