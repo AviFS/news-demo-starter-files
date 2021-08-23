@@ -46,6 +46,11 @@ func main() {
 		port = "8080"
 	}
 
+	apiKey := os.Getenv("NEWS_API_KEY")
+	if apiKey == "" {
+		log.Fatal("NEWS_API_KEY in .env must be set")
+	}
+
 	fs := http.FileServer(http.Dir("assets"))
 
 	mux := http.NewServeMux()
