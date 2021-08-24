@@ -63,3 +63,8 @@ type Results struct {
 	TotalResults int       `json:"totalResults"`
 	Articles     []Article `json:"articles"`
 }
+
+func (a *Article) FormatPublishedDate() string {
+	year, month, day := a.PublishedAt.Date()
+	return fmt.Sprintf("%v %d, %d", month, day, year)
+}
